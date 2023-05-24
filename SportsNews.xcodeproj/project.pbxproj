@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08A5E7C7FFE350B654EAFCD0 /* Pods_SportsNewsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA9FFFC860E60E04BF4B2615 /* Pods_SportsNewsTests.framework */; };
+		7FD267AB50743B0D30F4249F /* Pods_SportsNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 379E6C4BE7A0811913FD871B /* Pods_SportsNews.framework */; };
 		8F82B0FE2A182B2E00F33E97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F82B0FD2A182B2E00F33E97 /* AppDelegate.swift */; };
 		8F82B1002A182B2E00F33E97 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F82B0FF2A182B2E00F33E97 /* SceneDelegate.swift */; };
 		8F82B1022A182B2E00F33E97 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F82B1012A182B2E00F33E97 /* ViewController.swift */; };
@@ -17,6 +19,19 @@
 		8F82B1182A182B3300F33E97 /* SportsNewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F82B1172A182B3300F33E97 /* SportsNewsTests.swift */; };
 		8F82B1222A182B3300F33E97 /* SportsNewsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F82B1212A182B3300F33E97 /* SportsNewsUITests.swift */; };
 		8F82B1242A182B3300F33E97 /* SportsNewsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F82B1232A182B3300F33E97 /* SportsNewsUITestsLaunchTests.swift */; };
+		8F82B1332A183FC000F33E97 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F82B1322A183FC000F33E97 /* CollectionViewCell.swift */; };
+		8F82B1352A183FDD00F33E97 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F82B1342A183FDD00F33E97 /* CollectionViewController.swift */; };
+		8F82B1372A1841A300F33E97 /* photo1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8F82B1362A1841A300F33E97 /* photo1.jpeg */; };
+		8F8439342A1E48C700CB5C61 /* football.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F8439332A1E48C700CB5C61 /* football.jpg */; };
+		8F8439362A1E4A1D00CB5C61 /* basketball.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F8439352A1E4A1D00CB5C61 /* basketball.jpg */; };
+		8F8439382A1E4BD200CB5C61 /* cricket.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F8439372A1E4BD200CB5C61 /* cricket.jpg */; };
+		8F84393A2A1E4C8A00CB5C61 /* cricket2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F8439392A1E4C8900CB5C61 /* cricket2.png */; };
+		8F84393C2A1E58BE00CB5C61 /* tennis.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F84393B2A1E58BE00CB5C61 /* tennis.jpg */; };
+		8F84393E2A1E59A000CB5C61 /* default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F84393D2A1E59A000CB5C61 /* default.jpg */; };
+		8F8439402A1E5CB300CB5C61 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F84393F2A1E5CB300CB5C61 /* TableViewCell.swift */; };
+		8FCEC5EA2A1AE7AC009569F4 /* LeagueTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCEC5E92A1AE7AC009569F4 /* LeagueTableViewController.swift */; };
+		8FCEC5EC2A1AEA72009569F4 /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCEC5EB2A1AEA72009569F4 /* League.swift */; };
+		9A219F10DA8A4069116B0517 /* Pods_SportsNews_SportsNewsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD2D8C42F9627E19901A217B /* Pods_SportsNews_SportsNewsUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +52,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04F0E1A8EC05D8621B9CDBB3 /* Pods-SportsNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportsNews.debug.xcconfig"; path = "Target Support Files/Pods-SportsNews/Pods-SportsNews.debug.xcconfig"; sourceTree = "<group>"; };
+		0E4F2A0950B786E56168E48E /* Pods-SportsNewsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportsNewsTests.release.xcconfig"; path = "Target Support Files/Pods-SportsNewsTests/Pods-SportsNewsTests.release.xcconfig"; sourceTree = "<group>"; };
+		2FF7EF7013F73236F38E4753 /* Pods-SportsNews-SportsNewsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportsNews-SportsNewsUITests.debug.xcconfig"; path = "Target Support Files/Pods-SportsNews-SportsNewsUITests/Pods-SportsNews-SportsNewsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		379E6C4BE7A0811913FD871B /* Pods_SportsNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportsNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F9C1B373B861AE2A2B8B4B1 /* Pods-SportsNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportsNews.release.xcconfig"; path = "Target Support Files/Pods-SportsNews/Pods-SportsNews.release.xcconfig"; sourceTree = "<group>"; };
+		6339870838EED71A9513E641 /* Pods-SportsNews-SportsNewsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportsNews-SportsNewsUITests.release.xcconfig"; path = "Target Support Files/Pods-SportsNews-SportsNewsUITests/Pods-SportsNews-SportsNewsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8F82B0FA2A182B2E00F33E97 /* SportsNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F82B0FD2A182B2E00F33E97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F82B0FF2A182B2E00F33E97 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +72,21 @@
 		8F82B11D2A182B3300F33E97 /* SportsNewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportsNewsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F82B1212A182B3300F33E97 /* SportsNewsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsNewsUITests.swift; sourceTree = "<group>"; };
 		8F82B1232A182B3300F33E97 /* SportsNewsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsNewsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8F82B1322A183FC000F33E97 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		8F82B1342A183FDD00F33E97 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		8F82B1362A1841A300F33E97 /* photo1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo1.jpeg; sourceTree = "<group>"; };
+		8F8439332A1E48C700CB5C61 /* football.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = football.jpg; sourceTree = "<group>"; };
+		8F8439352A1E4A1D00CB5C61 /* basketball.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = basketball.jpg; sourceTree = "<group>"; };
+		8F8439372A1E4BD200CB5C61 /* cricket.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cricket.jpg; sourceTree = "<group>"; };
+		8F8439392A1E4C8900CB5C61 /* cricket2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cricket2.png; sourceTree = "<group>"; };
+		8F84393B2A1E58BE00CB5C61 /* tennis.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tennis.jpg; sourceTree = "<group>"; };
+		8F84393D2A1E59A000CB5C61 /* default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default.jpg; sourceTree = "<group>"; };
+		8F84393F2A1E5CB300CB5C61 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		8FCEC5E92A1AE7AC009569F4 /* LeagueTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueTableViewController.swift; sourceTree = "<group>"; };
+		8FCEC5EB2A1AEA72009569F4 /* League.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = League.swift; sourceTree = "<group>"; };
+		AD2D8C42F9627E19901A217B /* Pods_SportsNews_SportsNewsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportsNews_SportsNewsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA9FFFC860E60E04BF4B2615 /* Pods_SportsNewsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportsNewsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D63B08266D59130AD90D8376 /* Pods-SportsNewsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportsNewsTests.debug.xcconfig"; path = "Target Support Files/Pods-SportsNewsTests/Pods-SportsNewsTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FD267AB50743B0D30F4249F /* Pods_SportsNews.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08A5E7C7FFE350B654EAFCD0 /* Pods_SportsNewsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +110,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A219F10DA8A4069116B0517 /* Pods_SportsNews_SportsNewsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		331A2B9A66B51F015CC18976 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				04F0E1A8EC05D8621B9CDBB3 /* Pods-SportsNews.debug.xcconfig */,
+				3F9C1B373B861AE2A2B8B4B1 /* Pods-SportsNews.release.xcconfig */,
+				2FF7EF7013F73236F38E4753 /* Pods-SportsNews-SportsNewsUITests.debug.xcconfig */,
+				6339870838EED71A9513E641 /* Pods-SportsNews-SportsNewsUITests.release.xcconfig */,
+				D63B08266D59130AD90D8376 /* Pods-SportsNewsTests.debug.xcconfig */,
+				0E4F2A0950B786E56168E48E /* Pods-SportsNewsTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		70E40458C8192AD269ED2323 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				379E6C4BE7A0811913FD871B /* Pods_SportsNews.framework */,
+				AD2D8C42F9627E19901A217B /* Pods_SportsNews_SportsNewsUITests.framework */,
+				BA9FFFC860E60E04BF4B2615 /* Pods_SportsNewsTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8F82B0F12A182B2E00F33E97 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +147,8 @@
 				8F82B1162A182B3300F33E97 /* SportsNewsTests */,
 				8F82B1202A182B3300F33E97 /* SportsNewsUITests */,
 				8F82B0FB2A182B2E00F33E97 /* Products */,
+				331A2B9A66B51F015CC18976 /* Pods */,
+				70E40458C8192AD269ED2323 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +165,13 @@
 		8F82B0FC2A182B2E00F33E97 /* SportsNews */ = {
 			isa = PBXGroup;
 			children = (
+				8F84393D2A1E59A000CB5C61 /* default.jpg */,
+				8F84393B2A1E58BE00CB5C61 /* tennis.jpg */,
+				8F8439392A1E4C8900CB5C61 /* cricket2.png */,
+				8F8439372A1E4BD200CB5C61 /* cricket.jpg */,
+				8F8439352A1E4A1D00CB5C61 /* basketball.jpg */,
+				8F8439332A1E48C700CB5C61 /* football.jpg */,
+				8F82B1362A1841A300F33E97 /* photo1.jpeg */,
 				8F82B0FD2A182B2E00F33E97 /* AppDelegate.swift */,
 				8F82B0FF2A182B2E00F33E97 /* SceneDelegate.swift */,
 				8F82B1012A182B2E00F33E97 /* ViewController.swift */,
@@ -109,6 +180,11 @@
 				8F82B10B2A182B3200F33E97 /* LaunchScreen.storyboard */,
 				8F82B10E2A182B3200F33E97 /* Info.plist */,
 				8F82B1062A182B2F00F33E97 /* SportsNews.xcdatamodeld */,
+				8F82B1322A183FC000F33E97 /* CollectionViewCell.swift */,
+				8F82B1342A183FDD00F33E97 /* CollectionViewController.swift */,
+				8FCEC5E92A1AE7AC009569F4 /* LeagueTableViewController.swift */,
+				8FCEC5EB2A1AEA72009569F4 /* League.swift */,
+				8F84393F2A1E5CB300CB5C61 /* TableViewCell.swift */,
 			);
 			path = SportsNews;
 			sourceTree = "<group>";
@@ -137,9 +213,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8F82B1272A182B3300F33E97 /* Build configuration list for PBXNativeTarget "SportsNews" */;
 			buildPhases = (
+				E35B47D839A5C8B4619695BF /* [CP] Check Pods Manifest.lock */,
 				8F82B0F62A182B2E00F33E97 /* Sources */,
 				8F82B0F72A182B2E00F33E97 /* Frameworks */,
 				8F82B0F82A182B2E00F33E97 /* Resources */,
+				356FF8B9EB4F163C85A15BCA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,6 +232,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8F82B12A2A182B3300F33E97 /* Build configuration list for PBXNativeTarget "SportsNewsTests" */;
 			buildPhases = (
+				8DB11219FE373E7342C6B7CC /* [CP] Check Pods Manifest.lock */,
 				8F82B10F2A182B3300F33E97 /* Sources */,
 				8F82B1102A182B3300F33E97 /* Frameworks */,
 				8F82B1112A182B3300F33E97 /* Resources */,
@@ -172,9 +251,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8F82B12D2A182B3300F33E97 /* Build configuration list for PBXNativeTarget "SportsNewsUITests" */;
 			buildPhases = (
+				A74EC691DE98D2A153A35D2C /* [CP] Check Pods Manifest.lock */,
 				8F82B1192A182B3300F33E97 /* Sources */,
 				8F82B11A2A182B3300F33E97 /* Frameworks */,
 				8F82B11B2A182B3300F33E97 /* Resources */,
+				934A49D52065D2FFA3D481FD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -234,9 +315,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F8439362A1E4A1D00CB5C61 /* basketball.jpg in Resources */,
+				8F8439382A1E4BD200CB5C61 /* cricket.jpg in Resources */,
+				8F8439342A1E48C700CB5C61 /* football.jpg in Resources */,
+				8F84393C2A1E58BE00CB5C61 /* tennis.jpg in Resources */,
 				8F82B10D2A182B3200F33E97 /* LaunchScreen.storyboard in Resources */,
 				8F82B10A2A182B3200F33E97 /* Assets.xcassets in Resources */,
+				8F82B1372A1841A300F33E97 /* photo1.jpeg in Resources */,
+				8F84393A2A1E4C8A00CB5C61 /* cricket2.png in Resources */,
 				8F82B1052A182B2E00F33E97 /* Main.storyboard in Resources */,
+				8F84393E2A1E59A000CB5C61 /* default.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,15 +344,123 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		356FF8B9EB4F163C85A15BCA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SportsNews/Pods-SportsNews-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SportsNews/Pods-SportsNews-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SportsNews/Pods-SportsNews-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8DB11219FE373E7342C6B7CC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SportsNewsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		934A49D52065D2FFA3D481FD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SportsNews-SportsNewsUITests/Pods-SportsNews-SportsNewsUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SportsNews-SportsNewsUITests/Pods-SportsNews-SportsNewsUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SportsNews-SportsNewsUITests/Pods-SportsNews-SportsNewsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A74EC691DE98D2A153A35D2C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SportsNews-SportsNewsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E35B47D839A5C8B4619695BF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SportsNews-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8F82B0F62A182B2E00F33E97 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F82B1352A183FDD00F33E97 /* CollectionViewController.swift in Sources */,
+				8F82B1332A183FC000F33E97 /* CollectionViewCell.swift in Sources */,
+				8FCEC5EC2A1AEA72009569F4 /* League.swift in Sources */,
+				8F8439402A1E5CB300CB5C61 /* TableViewCell.swift in Sources */,
 				8F82B1022A182B2E00F33E97 /* ViewController.swift in Sources */,
 				8F82B0FE2A182B2E00F33E97 /* AppDelegate.swift in Sources */,
 				8F82B1002A182B2E00F33E97 /* SceneDelegate.swift in Sources */,
 				8F82B1082A182B2F00F33E97 /* SportsNews.xcdatamodeld in Sources */,
+				8FCEC5EA2A1AE7AC009569F4 /* LeagueTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +632,7 @@
 		};
 		8F82B1282A182B3300F33E97 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04F0E1A8EC05D8621B9CDBB3 /* Pods-SportsNews.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -463,6 +660,7 @@
 		};
 		8F82B1292A182B3300F33E97 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F9C1B373B861AE2A2B8B4B1 /* Pods-SportsNews.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -490,6 +688,7 @@
 		};
 		8F82B12B2A182B3300F33E97 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D63B08266D59130AD90D8376 /* Pods-SportsNewsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -509,6 +708,7 @@
 		};
 		8F82B12C2A182B3300F33E97 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E4F2A0950B786E56168E48E /* Pods-SportsNewsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -528,6 +728,7 @@
 		};
 		8F82B12E2A182B3300F33E97 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FF7EF7013F73236F38E4753 /* Pods-SportsNews-SportsNewsUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -545,6 +746,7 @@
 		};
 		8F82B12F2A182B3300F33E97 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6339870838EED71A9513E641 /* Pods-SportsNews-SportsNewsUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
