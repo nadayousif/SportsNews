@@ -116,7 +116,13 @@ class LeagueTableViewController: UITableViewController {
         return cell
     }
     
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(leagueArray![indexPath.row].league_name)
+        let myLeague = self.storyboard?.instantiateViewController(identifier: "SecScreen") as! SecViewController
+        myLeague.sportName = league
+        myLeague.sportKey = leagueArray![indexPath.row].league_key!
+        self.navigationController?.pushViewController(myLeague, animated: true)
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
