@@ -9,9 +9,15 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class CollectionViewController: UICollectionViewController,UICollectionViewDelegateFlowLayout {
+protocol CollectionProtocol : AnyObject{
+    
+}
+
+class CollectionViewController: UICollectionViewController,UICollectionViewDelegateFlowLayout,CollectionProtocol {
+    var collectionPresenter : CollectionPresenter?
+    
     var cellOne=[UIImage(named: "football.jpg"),UIImage(named: "basketball.jpg"),UIImage(named: "cricket2.png"),UIImage(named: "tennis.jpg")]
-    var cellLabel = ["Football","Basketball","Cricket","Tennis"]
+    var cellLabel = ["football","basketball","cricket","tennis"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,7 +28,8 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
         //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
-        
+        collectionPresenter = CollectionPresenter()
+        collectionPresenter?.attachView(view: self)
        
     }
     

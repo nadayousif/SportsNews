@@ -7,7 +7,13 @@
 
 import UIKit
 import SDWebImage
-class LeagueTableViewController: UITableViewController {
+
+protocol TableProtocol : AnyObject{
+    func updateMyTable(data :[League])
+}
+
+class LeagueTableViewController: UITableViewController,TableProtocol {
+    var tablePresenter : LeagueTablePresenter?
     var league = String()
     var leagueArray:[League]?
     var networkIndicator : UIActivityIndicatorView?
@@ -25,56 +31,26 @@ class LeagueTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        var url = URL(string: "")
-        switch leagueName {
-        case "Football":
-            url = URL(string: "https://apiv2.allsportsapi.com/football/?met=Leagues&APIkey=fc142f1a9f4bd0d8feb642e74313246f65e869f3262027d2bb4eed0d9d0fac98")
-            
-        case "Basketball":
-            url = URL(string: "https://apiv2.allsportsapi.com/basketball/?met=Leagues&APIkey=fc142f1a9f4bd0d8feb642e74313246f65e869f3262027d2bb4eed0d9d0fac98")
-            
-        case "Cricket":
-            url = URL(string: "https://apiv2.allsportsapi.com/cricket/?met=Leagues&APIkey=fc142f1a9f4bd0d8feb642e74313246f65e869f3262027d2bb4eed0d9d0fac98")
-            
-            
-        default:
-            url = URL(string: "https://apiv2.allsportsapi.com/tennis/?met=Leagues&APIkey=fc142f1a9f4bd0d8feb642e74313246f65e869f3262027d2bb4eed0d9d0fac98")
-            
-        }
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        let req = URLRequest(url: url!)
-        let session = URLSession(configuration: .default)
-        let task = session.dataTask(with: req){data,response,error in
-            var json = try? JSONSerialization.jsonObject(with: data!) as?
-            Dictionary<String,Any>
-            var dataArr = json!["result"] as! Array<Dictionary<String,Any>>
-            var dataDic = dataArr[0] as! Dictionary<String,Any>
-            var empName = dataDic["league_name"] as! String
-            print("nada")
-            print(empName)
-            for rawLeague in dataArr {
-                let leagueObj = League()
-                leagueObj.league_name = rawLeague["league_name"] as? String
-                leagueObj.country_name = rawLeague["country_name"] as? String
-                leagueObj.league_key = rawLeague["league_key"] as? Int
-                leagueObj.league_logo = rawLeague["league_logo"] as? String
-                self.leagueArray?.append(leagueObj)
-            }
-          
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-                self.networkIndicator!.stopAnimating()
-
-            }
         
-            
-        }
-        task.resume()
+       
+        
+        tablePresenter = LeagueTablePresenter()
+        tablePresenter?.attachView(view: self)
+        tablePresenter?.getData(leagueName: leagueName)
     }
 
     // MARK: - Table view data source
 
+    func updateMyTable(data :[League]){
+        leagueArray = data
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+            self.networkIndicator!.stopAnimating()
+        }
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -105,24 +81,30 @@ class LeagueTableViewController: UITableViewController {
             }*/
         
         cell.labelLeague.text = leagueArray![indexPath.row].league_name
+        cell.leagueView.layer.cornerRadius = 30
+        cell.layer.masksToBounds = true
         if(leagueArray![indexPath.row].league_logo != nil){
             let url = URL(string: leagueArray![indexPath.row].league_logo!)
             cell.imageLeague?.sd_setImage(with: url,completed: nil)
             } else {
-                cell.imageLeague?.image = UIImage(named: "default.jpg")
+                cell.imageLeague?.image = UIImage(named: "logo.png")
             }
        
       
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    /*override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(leagueArray![indexPath.row].league_name)
         let myLeague = self.storyboard?.instantiateViewController(identifier: "SecScreen") as! SecViewController
         myLeague.sportName = league
         myLeague.sportKey = leagueArray![indexPath.row].league_key!
         self.navigationController?.pushViewController(myLeague, animated: true)
-    }
+    }*/
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tablePresenter?.navigateToLeagueDetailsScreen(leagueID: (leagueArray?[indexPath.row].league_key)!,sportName:league, view: self)
+        print("in all league\((leagueArray?[indexPath.row].league_key))")
+        }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

@@ -8,6 +8,8 @@
 import UIKit
 
 class TableViewCell: UITableViewCell {
+    @IBOutlet weak var leagueView: UIView!
+    
     @IBOutlet weak var labelLeague: UILabel!
     
     @IBOutlet weak var imageLeague: UIImageView!
