@@ -18,7 +18,6 @@ class SecViewController: UIViewController,UICollectionViewDelegate,UICollectionV
     
     var networkIndicator : UIActivityIndicatorView?
     var leagueDetailPresenter:LeagueDetailsPresenter?
-   
     var teamsArray=[Team]()
     var upcomingArray=[UpcomingDisplayedData]()
     var latestArray=[LatestResultDisplayedData]()
@@ -115,9 +114,10 @@ class SecViewController: UIViewController,UICollectionViewDelegate,UICollectionV
          switch(collectionView) {
          case  thirdCollection:
              print("to team details")
-             let myTeam = self.storyboard?.instantiateViewController(identifier: "teams") as! TeamDetailsViewController
+             leagueDetailPresenter?.navigateToTeamDetailsScreen(teamId: (teamsArray[indexPath.row].team_key),sportName:leagueDetailPresenter?.sportType ?? "football",teamName:(teamsArray[indexPath.row].team_name)!,leagueId: leagueDetailPresenter!.leagueId, teamLogo:teamsArray[indexPath.row].team_logo!,view: self)
+             /*let myTeam = self.storyboard?.instantiateViewController(identifier: "teams") as! TeamDetailsViewController
              
-             self.navigationController?.pushViewController(myTeam, animated: true)
+             self.navigationController?.pushViewController(myTeam, animated: true)*/
              
          default:
              print("no another view")

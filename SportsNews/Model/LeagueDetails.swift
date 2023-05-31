@@ -41,6 +41,7 @@ class Event {
         var event_away_final_result : String?
 }
 
+
 struct UpcomingDisplayedData{
     let firstTeamImage:String?
     let secondTeamImage:String?

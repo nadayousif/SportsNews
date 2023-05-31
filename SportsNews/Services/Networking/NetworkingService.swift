@@ -374,5 +374,25 @@ class NetworkingService {
     }
     
     
-
+    static func getPlayerResult(sportName: String,leagueId:Int,teamId:Int,compilition : @escaping([Team]?) -> Void){
+        var urlTeam = ""
+             urlTeam =
+            "https://apiv2.allsportsapi.com/\(sportName)/?&met=Teams&APIkey=73c2f608d71c07237af2b5e3b4f14237cf16a8f5fe0257f5e95c24171967b1fc&leagueId=\(leagueId)&teamId=\(teamId)"
+              var url = URL(string: urlTeam)
+              let req = URLRequest(url: url!)
+              let session = URLSession(configuration: .default)
+              let task = session.dataTask(with: req){
+                  data,response,error in
+                  do{
+                     if let data = data{
+                         let result = try? JSONDecoder().decode(LeagueTeams.self,from: data)
+                         compilition(result?.result!)
+                      }
+                  }catch{
+                      print("no data")
+                  }
+              }
+              
+              task.resume()
+      }
 }

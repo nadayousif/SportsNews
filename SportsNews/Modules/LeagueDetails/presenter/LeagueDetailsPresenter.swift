@@ -111,4 +111,14 @@ class LeagueDetailsPresenter{
         }
     }
     
+    
+    
+    func navigateToTeamDetailsScreen(teamId: Int, sportName: String,teamName:String,leagueId:Int,teamLogo:String,view: SecViewController) {
+            let teamDetailsView = view.storyboard?.instantiateViewController(identifier: "teams")
+            as! TeamDetailsViewController
+        let teamDetailsPresenter = TeamDetailsPresenter(sportType: sportName, teamId: teamId,teamName:teamName, leagueId: leagueId,teamLogo:teamLogo,view: teamDetailsView, networkService: NetworkingService())
+        teamDetailsView.teamDetailPresenter = teamDetailsPresenter
+            view.navigationController?.pushViewController(teamDetailsView, animated: true)
+        }
+    
 }
