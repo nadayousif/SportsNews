@@ -11,11 +11,13 @@ class LeagueDetailsPresenter{
     var leagueId:Int
     var view:SecViewProtocol
     var networkService:NetworkingService
-    init(sportType: String, leagueId: Int, view: SecViewProtocol, networkService: NetworkingService) {
+    
+    init(sportType: String, leagueId: Int, view: SecViewProtocol, networkService: NetworkingService,dataBaseService :DataBaseService) {
         self.sportType = sportType
         self.leagueId = leagueId
         self.view = view
         self.networkService = networkService
+       
         print(sportType)
         print(leagueId)
     }
@@ -116,7 +118,7 @@ class LeagueDetailsPresenter{
     func navigateToTeamDetailsScreen(teamId: Int, sportName: String,teamName:String,leagueId:Int,teamLogo:String,view: SecViewController) {
             let teamDetailsView = view.storyboard?.instantiateViewController(identifier: "teams")
             as! TeamDetailsViewController
-        let teamDetailsPresenter = TeamDetailsPresenter(sportType: sportName, teamId: teamId,teamName:teamName, leagueId: leagueId,teamLogo:teamLogo,view: teamDetailsView, networkService: NetworkingService())
+        let teamDetailsPresenter = TeamDetailsPresenter(sportType: sportName, teamId: teamId,teamName:teamName, leagueId: leagueId,teamLogo:teamLogo,view: teamDetailsView, networkService: NetworkingService(), dataBaseService: DataBaseService.getInstance)
         teamDetailsView.teamDetailPresenter = teamDetailsPresenter
             view.navigationController?.pushViewController(teamDetailsView, animated: true)
         }

@@ -7,7 +7,7 @@
 
 import UIKit
 import SDWebImage
-
+import Reachability
 protocol TableProtocol : AnyObject{
     func updateMyTable(data :[League])
 }
@@ -22,23 +22,30 @@ class LeagueTableViewController: UITableViewController,TableProtocol {
         var leagueName = league
         leagueArray = [League]()
         print("in table \(leagueName)")
-        networkIndicator = UIActivityIndicatorView(style: .large)
-                networkIndicator!.color = UIColor.red
-                networkIndicator!.center = view.center
-                networkIndicator!.startAnimating()
-                view.addSubview(networkIndicator!)
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        
-       
-        
-        tablePresenter = LeagueTablePresenter()
+        let reachability = try? Reachability()
+        // try? reachability?.startNotifier()
+        if reachability?.connection  ==  .unavailable{
+            let alert = UIAlertController(title: "Alert", message: "No Networking", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Click", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }else{
+            networkIndicator = UIActivityIndicatorView(style: .large)
+                    networkIndicator!.color = UIColor.red
+                    networkIndicator!.center = view.center
+                    networkIndicator!.startAnimating()
+                    view.addSubview(networkIndicator!)
+            tablePresenter = LeagueTablePresenter()
+            tablePresenter?.attachView(view: self)
+            tablePresenter?.getData(leagueName: leagueName)
+        }
+      
+       /* tablePresenter = LeagueTablePresenter()
         tablePresenter?.attachView(view: self)
-        tablePresenter?.getData(leagueName: leagueName)
+        tablePresenter?.getData(leagueName: leagueName)*/
+        
+        
+      
     }
 
     // MARK: - Table view data source
@@ -102,9 +109,17 @@ class LeagueTableViewController: UITableViewController,TableProtocol {
         self.navigationController?.pushViewController(myLeague, animated: true)
     }*/
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tablePresenter?.navigateToLeagueDetailsScreen(leagueID: (leagueArray?[indexPath.row].league_key)!,sportName:league, view: self)
-        print("in all league\((leagueArray?[indexPath.row].league_key))")
+        let reachability = try? Reachability()
+        if reachability?.connection  ==  .unavailable{
+            let alert = UIAlertController(title: "Alert", message: "No Networking", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Click", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }else{
+            tablePresenter?.navigateToLeagueDetailsScreen(leagueID: (leagueArray?[indexPath.row].league_key)!,sportName:league, view: self)
+            print("in all league\((leagueArray?[indexPath.row].league_key))")
         }
+       
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

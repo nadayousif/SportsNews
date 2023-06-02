@@ -7,6 +7,7 @@
 
 import UIKit
 import SDWebImage
+import Reachability
 protocol TeamDetailsProtocol : AnyObject{
     func updateAllPlayer (data : [Team])
     
@@ -23,6 +24,9 @@ class TeamDetailsViewController: UIViewController,UICollectionViewDelegate,UICol
     @IBOutlet weak var teamImage: UIImageView!
     @IBOutlet weak var coachName: UILabel!
     @IBOutlet weak var teamName: UILabel!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         networkIndicator = UIActivityIndicatorView(style: .large)
@@ -97,6 +101,14 @@ class TeamDetailsViewController: UIViewController,UICollectionViewDelegate,UICol
                 self.networkIndicator!.stopAnimating()
             }
         
+    }
+    
+    
+    @IBAction func addFav(_ sender: Any) {
+       
+        self.teamDetailPresenter?.addTeamToFavorites(teamName: self.teamDetailPresenter?.teamName ?? "" , teamImage: self.teamDetailPresenter?.teamLogo ?? "")
+        print("in team page \(self.teamDetailPresenter?.teamName )")
+  
     }
     
 

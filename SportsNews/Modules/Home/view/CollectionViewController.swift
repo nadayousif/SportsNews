@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Reachability
 private let reuseIdentifier = "Cell"
 
 protocol CollectionProtocol : AnyObject{
@@ -20,7 +20,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
     var cellLabel = ["football","basketball","cricket","tennis"]
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -87,9 +87,17 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(cellLabel[indexPath.row])
-        let myLeague = self.storyboard?.instantiateViewController(identifier: "league") as! LeagueTableViewController
-        myLeague.league = cellLabel[indexPath.row]
-        self.navigationController?.pushViewController(myLeague, animated: true)
+        let reachability = try? Reachability()
+        if reachability?.connection  ==  .unavailable{
+            let alert = UIAlertController(title: "Alert", message: "No Networking", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Click", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }else{
+            let myLeague = self.storyboard?.instantiateViewController(identifier: "league") as! LeagueTableViewController
+            myLeague.league = cellLabel[indexPath.row]
+            self.navigationController?.pushViewController(myLeague, animated: true)
+        }
+
     }
     // MARK: UICollectionViewDelegate
 

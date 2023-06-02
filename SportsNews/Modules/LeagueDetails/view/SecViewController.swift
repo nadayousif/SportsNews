@@ -7,7 +7,7 @@
 
 import UIKit
 import SDWebImage
-
+import Reachability
 protocol SecViewProtocol : AnyObject{
     //func updateMyTable(data :[League])
     func updateAllTeams (data : [Team])
@@ -31,11 +31,7 @@ class SecViewController: UIViewController,UICollectionViewDelegate,UICollectionV
     //@IBOutlet weak var thirdCollection: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        networkIndicator = UIActivityIndicatorView(style: .large)
-                networkIndicator!.color = UIColor.red
-                networkIndicator!.center = view.center
-                networkIndicator!.startAnimating()
-                view.addSubview(networkIndicator!)
+    
         // Do any additional setup after loading the view.
         fristCollection.dataSource = self
         fristCollection.delegate = self
@@ -43,10 +39,22 @@ class SecViewController: UIViewController,UICollectionViewDelegate,UICollectionV
         secCollection.delegate = self
         thirdCollection.dataSource = self
         thirdCollection.delegate = self
-        self.leagueDetailPresenter?.getLeagueTeams()
-        self.leagueDetailPresenter?.getUpcomingFixture()
-        self.leagueDetailPresenter?.getLatestResult()
-        
+ 
+        let reachability = try? Reachability()
+        if reachability?.connection  ==  .unavailable{
+            let alert = UIAlertController(title: "Alert", message: "No Networking", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Click", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }else{
+            networkIndicator = UIActivityIndicatorView(style: .large)
+                    networkIndicator!.color = UIColor.red
+                    networkIndicator!.center = view.center
+                    networkIndicator!.startAnimating()
+                    view.addSubview(networkIndicator!)
+            self.leagueDetailPresenter?.getLeagueTeams()
+            self.leagueDetailPresenter?.getUpcomingFixture()
+            self.leagueDetailPresenter?.getLatestResult()
+        }
     
     }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -110,17 +118,24 @@ class SecViewController: UIViewController,UICollectionViewDelegate,UICollectionV
     
     
      func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-         
-         switch(collectionView) {
-         case  thirdCollection:
-             print("to team details")
-             leagueDetailPresenter?.navigateToTeamDetailsScreen(teamId: (teamsArray[indexPath.row].team_key),sportName:leagueDetailPresenter?.sportType ?? "football",teamName:(teamsArray[indexPath.row].team_name)!,leagueId: leagueDetailPresenter!.leagueId, teamLogo:teamsArray[indexPath.row].team_logo!,view: self)
-             /*let myTeam = self.storyboard?.instantiateViewController(identifier: "teams") as! TeamDetailsViewController
+         let reachability = try? Reachability()
+         if reachability?.connection  ==  .unavailable{
+             let alert = UIAlertController(title: "Alert", message: "No Networking", preferredStyle: .alert)
+             alert.addAction(UIAlertAction(title: "Click", style: .default, handler: nil))
+             self.present(alert, animated: true, completion: nil)
+         }else{
+             switch(collectionView) {
+             case  thirdCollection:
+                 print("to team details")
+                 leagueDetailPresenter?.navigateToTeamDetailsScreen(teamId: (teamsArray[indexPath.row].team_key),sportName:leagueDetailPresenter?.sportType ?? "football",teamName:(teamsArray[indexPath.row].team_name)!,leagueId: leagueDetailPresenter!.leagueId, teamLogo:teamsArray[indexPath.row].team_logo!,view: self)
+                 /*let myTeam = self.storyboard?.instantiateViewController(identifier: "teams") as! TeamDetailsViewController
+                  
+                  self.navigationController?.pushViewController(myTeam, animated: true)*/
+                 
+             default:
+                 print("no another view")
+             }
              
-             self.navigationController?.pushViewController(myTeam, animated: true)*/
-             
-         default:
-             print("no another view")
          }
     }
     

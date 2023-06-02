@@ -23,7 +23,7 @@ class LeagueTablePresenter{
     func navigateToLeagueDetailsScreen(leagueID: Int, sportName: String,view: LeagueTableViewController) {
             let leagueDetailsView = view.storyboard?.instantiateViewController(identifier: "SecScreen")
             as! SecViewController
-        let leagueDetailsPresenter = LeagueDetailsPresenter(sportType: sportName, leagueId: leagueID, view: leagueDetailsView, networkService: NetworkingService())
+        let leagueDetailsPresenter = LeagueDetailsPresenter(sportType: sportName, leagueId: leagueID, view: leagueDetailsView, networkService: NetworkingService(),dataBaseService: DataBaseService.getInstance)
             leagueDetailsView.leagueDetailPresenter = leagueDetailsPresenter
             view.navigationController?.pushViewController(leagueDetailsView, animated: true)
         }
