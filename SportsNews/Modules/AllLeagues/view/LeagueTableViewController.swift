@@ -10,19 +10,23 @@ import SDWebImage
 import Reachability
 protocol TableProtocol : AnyObject{
     func updateMyTable(data :[League])
+    func searchInLeagues(result : [League])
+    func endSearching(result :[League])
 }
 
-class LeagueTableViewController: UITableViewController,TableProtocol {
+class LeagueTableViewController: UITableViewController,TableProtocol,UISearchBarDelegate{
     var tablePresenter : LeagueTablePresenter?
     var league = String()
     var leagueArray:[League]?
     var networkIndicator : UIActivityIndicatorView?
+    @IBOutlet weak var leagueSearch: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         var leagueName = league
         leagueArray = [League]()
         print("in table \(leagueName)")
-        
+        leagueSearch.delegate = self
         let reachability = try? Reachability()
         // try? reachability?.startNotifier()
         if reachability?.connection  ==  .unavailable{
@@ -40,9 +44,7 @@ class LeagueTableViewController: UITableViewController,TableProtocol {
             tablePresenter?.getData(leagueName: leagueName)
         }
       
-       /* tablePresenter = LeagueTablePresenter()
-        tablePresenter?.attachView(view: self)
-        tablePresenter?.getData(leagueName: leagueName)*/
+     
         
         
       
@@ -71,7 +73,32 @@ class LeagueTableViewController: UITableViewController,TableProtocol {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+           if searchText.count > 0 {
+               tablePresenter?.searchInLeagues(with: searchText)
+             } else {
+                 tablePresenter?.finalSearching()
+                 DispatchQueue.main.async {
+                     searchBar.resignFirstResponder()
+                 }
+             }
+       }
     
+       func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+           searchBar.resignFirstResponder()
+       }
+    
+    
+    func searchInLeagues(result: [League]) {
+         self.leagueArray=result
+         self.tableView.reloadData()
+     }
+     
+     func endSearching(result: [League]) {
+         self.leagueArray=result
+         self.tableView.reloadData()
+     }
+
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
@@ -100,14 +127,7 @@ class LeagueTableViewController: UITableViewController,TableProtocol {
       
         return cell
     }
-    
-    /*override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(leagueArray![indexPath.row].league_name)
-        let myLeague = self.storyboard?.instantiateViewController(identifier: "SecScreen") as! SecViewController
-        myLeague.sportName = league
-        myLeague.sportKey = leagueArray![indexPath.row].league_key!
-        self.navigationController?.pushViewController(myLeague, animated: true)
-    }*/
+  
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let reachability = try? Reachability()
         if reachability?.connection  ==  .unavailable{
