@@ -8,7 +8,7 @@
 import Foundation
 
 
-class Event {
+class Event : Decodable {
    // var event_key: Int?
     var event_date: String?
     var event_date_start: String?
@@ -41,7 +41,10 @@ class Event {
         var event_away_final_result : String?
 }
 
-
+struct eventsLeague :Decodable{
+    let success: Int
+    let result: [Event]?
+}
 struct UpcomingDisplayedData{
     let firstTeamImage:String?
     let secondTeamImage:String?

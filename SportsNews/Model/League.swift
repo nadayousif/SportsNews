@@ -8,12 +8,18 @@
 import Foundation
 
 
-class League {
+class League :  Decodable {
     var league_key: Int?
     var league_name: String?
     var country_name: String?
     var league_logo: String?
 }
+
+struct LeagueResult :Decodable{
+    let success: Int
+    let result: [League]?
+}
+
 
 struct LeagueTeams :Decodable{
     let success: Int

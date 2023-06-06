@@ -83,7 +83,7 @@ class NetworkingService {
         switch (sportName){
         case "football" :
              urlTeam =
-               "https://apiv2.allsportsapi.com/\(sportName)/?met=Fixtures&APIkey=73c2f608d71c07237af2b5e3b4f14237cf16a8f5fe0257f5e95c24171967b1fc&from=2023-05-23&to=2023-06-30&leagueId=\(leagueId)"
+               "https://apiv2.allsportsapi.com/\(sportName)/?met=Fixtures&APIkey=fc142f1a9f4bd0d8feb642e74313246f65e869f3262027d2bb4eed0d9d0fac98&from=2023-05-23&to=2023-06-30&leagueId=\(leagueId)"
             
               var url = URL(string: urlTeam)
               let req = URLRequest(url: url!)
@@ -105,7 +105,7 @@ class NetworkingService {
                       leagueObj.home_team_logo = rawLeague["home_team_logo"] as? String
                       leagueObj.away_team_logo = rawLeague["away_team_logo"] as? String
                       leagueObj.event_date = rawLeague["event_date"] as? String
-                      leagueObj.event_time = (rawLeague["event_time"] as? String)!
+                      leagueObj.event_time = (rawLeague["event_time"] as? String)
                       leagueObj.event_home_team = rawLeague["event_home_team"] as? String
                       leagueObj.event_away_team = rawLeague["event_away_team"] as? String
                       upcomingArray?.append(leagueObj)
@@ -117,7 +117,7 @@ class NetworkingService {
               task.resume()
         case "basketball" :
             urlTeam =
-              "https://apiv2.allsportsapi.com/\(sportName)/?met=Fixtures&APIkey=73c2f608d71c07237af2b5e3b4f14237cf16a8f5fe0257f5e95c24171967b1fc&from=2023-01-23&to=2023-12-30&leagueId=\(leagueId)"
+              "https://apiv2.allsportsapi.com/\(sportName)/?met=Fixtures&APIkey=fc142f1a9f4bd0d8feb642e74313246f65e869f3262027d2bb4eed0d9d0fac98&from=2023-01-23&to=2023-12-30&leagueId=\(leagueId)"
             
               var url = URL(string: urlTeam)
               let req = URLRequest(url: url!)
@@ -139,7 +139,7 @@ class NetworkingService {
                       leagueObj.event_home_team_logo = rawLeague["event_home_team_logo"] as? String
                       leagueObj.event_away_team_logo = rawLeague["event_away_team_logo"] as? String
                       leagueObj.event_date = rawLeague["event_date"] as? String
-                      leagueObj.event_time = (rawLeague["event_time"] as? String)!
+                      leagueObj.event_time = (rawLeague["event_time"] as? String)
                       leagueObj.event_home_team = rawLeague["event_home_team"] as? String
                       leagueObj.event_away_team = rawLeague["event_away_team"] as? String
                       upcomingArray?.append(leagueObj)
@@ -151,7 +151,7 @@ class NetworkingService {
               task.resume()
         case "cricket" :
             urlTeam =
-              "https://apiv2.allsportsapi.com/\(sportName)/?met=Fixtures&APIkey=73c2f608d71c07237af2b5e3b4f14237cf16a8f5fe0257f5e95c24171967b1fc&from=2022-01-23&to=2023-12-30&leagueId=\(leagueId)"
+              "https://apiv2.allsportsapi.com/\(sportName)/?met=Fixtures&APIkey=fc142f1a9f4bd0d8feb642e74313246f65e869f3262027d2bb4eed0d9d0fac98&from=2022-01-23&to=2023-12-30&leagueId=\(leagueId)"
             
               var url = URL(string: urlTeam)
               let req = URLRequest(url: url!)
@@ -185,7 +185,7 @@ class NetworkingService {
               task.resume()
         default :
             urlTeam =
-              "https://apiv2.allsportsapi.com/\(sportName)/?met=Fixtures&APIkey=73c2f608d71c07237af2b5e3b4f14237cf16a8f5fe0257f5e95c24171967b1fc&from=2020-05-23&to=2025-06-30&leagueId=\(leagueId)"
+              "https://apiv2.allsportsapi.com/\(sportName)/?met=Fixtures&APIkey=fc142f1a9f4bd0d8feb642e74313246f65e869f3262027d2bb4eed0d9d0fac98&from=2020-05-23&to=2025-06-30&leagueId=\(leagueId)"
             
               var url = URL(string: urlTeam)
               let req = URLRequest(url: url!)
@@ -227,7 +227,7 @@ class NetworkingService {
         switch (sportName){
         case "football" :
              urlTeam =
-            "https://apiv2.allsportsapi.com/\(sportName)/?met=Fixtures&APIkey=73c2f608d71c07237af2b5e3b4f14237cf16a8f5fe0257f5e95c24171967b1fc&from=2023-05-23&to=2023-06-30&leagueId=\(leagueId)"
+            "https://apiv2.allsportsapi.com/\(sportName)/?met=Fixtures&APIkey=fc142f1a9f4bd0d8feb642e74313246f65e869f3262027d2bb4eed0d9d0fac98&from=2023-05-23&to=2023-06-30&leagueId=\(leagueId)"
             
               var url = URL(string: urlTeam)
               let req = URLRequest(url: url!)
@@ -249,7 +249,7 @@ class NetworkingService {
                       leagueObj.event_home_team = rawLeague["event_home_team"] as? String
                       leagueObj.event_away_team = rawLeague["event_away_team"] as? String
                       leagueObj.event_date = rawLeague["event_date"] as? String
-                      leagueObj.event_time = (rawLeague["event_time"] as? String)!
+                      leagueObj.event_time = (rawLeague["event_time"] as? String)
                       leagueObj.home_team_logo = rawLeague["home_team_logo"] as? String
                       leagueObj.away_team_logo = rawLeague["away_team_logo"] as? String
                       leagueObj.event_final_result = rawLeague["event_final_result"] as? String
@@ -263,7 +263,7 @@ class NetworkingService {
             
         case "basketball" :
             urlTeam =
-            "https://apiv2.allsportsapi.com/\(sportName)/?met=Fixtures&APIkey=73c2f608d71c07237af2b5e3b4f14237cf16a8f5fe0257f5e95c24171967b1fc&from=2023-01-23&to=2023-12-30&leagueId=\(leagueId)"
+            "https://apiv2.allsportsapi.com/\(sportName)/?met=Fixtures&APIkey=fc142f1a9f4bd0d8feb642e74313246f65e869f3262027d2bb4eed0d9d0fac98&from=2023-01-23&to=2023-12-30&leagueId=\(leagueId)"
             
               var url = URL(string: urlTeam)
               let req = URLRequest(url: url!)
@@ -299,7 +299,7 @@ class NetworkingService {
             
         case "cricket" :
             urlTeam =
-              "https://apiv2.allsportsapi.com/\(sportName)/?met=Fixtures&APIkey=73c2f608d71c07237af2b5e3b4f14237cf16a8f5fe0257f5e95c24171967b1fc&from=2022-01-23&to=2023-12-30&leagueId=\(leagueId)"
+              "https://apiv2.allsportsapi.com/\(sportName)/?met=Fixtures&APIkey=fc142f1a9f4bd0d8feb642e74313246f65e869f3262027d2bb4eed0d9d0fac98&from=2022-01-23&to=2023-12-30&leagueId=\(leagueId)"
             
               var url = URL(string: urlTeam)
               let req = URLRequest(url: url!)
@@ -335,7 +335,7 @@ class NetworkingService {
             
         default :
             urlTeam =
-            "https://apiv2.allsportsapi.com/\(sportName)/?met=Fixtures&APIkey=73c2f608d71c07237af2b5e3b4f14237cf16a8f5fe0257f5e95c24171967b1fc&from=2020-05-23&to=2025-06-30&leagueId=\(leagueId)"
+            "https://apiv2.allsportsapi.com/\(sportName)/?met=Fixtures&APIkey=fc142f1a9f4bd0d8feb642e74313246f65e869f3262027d2bb4eed0d9d0fac98&from=2020-05-23&to=2025-06-30&leagueId=\(leagueId)"
             
               var url = URL(string: urlTeam)
               let req = URLRequest(url: url!)
@@ -377,7 +377,7 @@ class NetworkingService {
     static func getPlayerResult(sportName: String,leagueId:Int,teamId:Int,compilition : @escaping([Team]?) -> Void){
         var urlTeam = ""
              urlTeam =
-            "https://apiv2.allsportsapi.com/\(sportName)/?&met=Teams&APIkey=73c2f608d71c07237af2b5e3b4f14237cf16a8f5fe0257f5e95c24171967b1fc&leagueId=\(leagueId)&teamId=\(teamId)"
+            "https://apiv2.allsportsapi.com/\(sportName)/?&met=Teams&APIkey=fc142f1a9f4bd0d8feb642e74313246f65e869f3262027d2bb4eed0d9d0fac98&leagueId=\(leagueId)&teamId=\(teamId)"
               var url = URL(string: urlTeam)
               let req = URLRequest(url: url!)
               let session = URLSession(configuration: .default)
