@@ -1,0 +1,37 @@
+{
+  "configurations" : [
+    {
+      "id" : "74370BB2-287C-46CF-8BAE-14130C3A65E2",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:SportsNews.xcodeproj",
+      "identifier" : "8F82B0F92A182B2E00F33E97",
+      "name" : "SportsNews"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:SportsNews.xcodeproj",
+        "identifier" : "8F82B1122A182B3300F33E97",
+        "name" : "SportsNewsTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:SportsNews.xcodeproj",
+        "identifier" : "8F82B11C2A182B3300F33E97",
+        "name" : "SportsNewsUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

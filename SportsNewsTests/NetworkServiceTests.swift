@@ -33,6 +33,9 @@ final class NetworkServiceTests: XCTestCase {
         waitForExpectations(timeout: 10, handler: nil)
     }
     
+   
+    
+    
     func testGetTeamsFromURL(){
         let myExpectation = expectation(description: "waiting for the API")
         
@@ -49,7 +52,8 @@ final class NetworkServiceTests: XCTestCase {
         
         waitForExpectations(timeout: 10, handler: nil)
     }
-
+    
+    
     func testGetUpcomingFixturesFromURL(){
         let myExpectation = expectation(description: "waiting for the API")
         
@@ -67,10 +71,114 @@ final class NetworkServiceTests: XCTestCase {
         waitForExpectations(timeout: 10, handler: nil)
     }
     
+    func testGetUpcomingFixturesTwoFromURL(){
+        let myExpectation = expectation(description: "waiting for the API")
+        
+        NetworkingService.getUpcomingFixtures(sportName: "tennis", leagueId:3226){ result in
+            guard let result = result else{
+                XCTFail()
+                myExpectation.fulfill()
+                return
+            }
+            XCTAssertGreaterThan(result.count, 0, "Array is Empty")
+            //XCTAssertEqual(items.count, 0, "Array is not Empty")
+            myExpectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 10, handler: nil)
+    }
+    
+    func testGetUpcomingFixturesThreeFromURL(){
+        let myExpectation = expectation(description: "waiting for the API")
+        
+        NetworkingService.getUpcomingFixtures(sportName: "basketball", leagueId:1098){ result in
+            guard let result = result else{
+                XCTFail()
+                myExpectation.fulfill()
+                return
+            }
+            XCTAssertGreaterThan(result.count, 0, "Array is Empty")
+            //XCTAssertEqual(items.count, 0, "Array is not Empty")
+            myExpectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 10, handler: nil)
+    }
+    
+    func testGetUpcomingFixturesFourFromURL(){
+        let myExpectation = expectation(description: "waiting for the API")
+        
+        NetworkingService.getUpcomingFixtures(sportName: "cricket", leagueId:733){ result in
+            guard let result = result else{
+                XCTFail()
+                myExpectation.fulfill()
+                return
+            }
+            XCTAssertGreaterThan(result.count, 0, "Array is Empty")
+            //XCTAssertEqual(items.count, 0, "Array is not Empty")
+            myExpectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 10, handler: nil)
+    }
     func testGetLatestResultFromURL(){
         let myExpectation = expectation(description: "waiting for the API")
         
         NetworkingService.getLatestResult(sportName: "football", leagueId: 152){ result in
+            guard let result = result else{
+                XCTFail()
+                myExpectation.fulfill()
+                return
+            }
+            XCTAssertGreaterThan(result.count, 0, "Array is Empty")
+            //XCTAssertEqual(items.count, 0, "Array is not Empty")
+            myExpectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 10, handler: nil)
+    }
+    
+    
+    
+    func testGetLatestResultTwoFromURL(){
+        let myExpectation = expectation(description: "waiting for the API")
+        
+        NetworkingService.getLatestResult(sportName: "basketball", leagueId: 1098){ result in
+            guard let result = result else{
+                XCTFail()
+                myExpectation.fulfill()
+                return
+            }
+            XCTAssertGreaterThan(result.count, 0, "Array is Empty")
+            //XCTAssertEqual(items.count, 0, "Array is not Empty")
+            myExpectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 10, handler: nil)
+    }
+    
+    func testGetLatestResultThreeFromURL(){
+        let myExpectation = expectation(description: "waiting for the API")
+        
+        NetworkingService.getLatestResult(sportName: "cricket", leagueId: 733){ result in
+            guard let result = result else{
+                XCTFail()
+                myExpectation.fulfill()
+                return
+            }
+            XCTAssertGreaterThan(result.count, 0, "Array is Empty")
+            //XCTAssertEqual(items.count, 0, "Array is not Empty")
+            myExpectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 10, handler: nil)
+    }
+    
+    
+    func testGetLatestResultFourFromURL(){
+        let myExpectation = expectation(description: "waiting for the API")
+        
+        NetworkingService.getLatestResult(sportName: "tennis", leagueId: 3226){ result in
             guard let result = result else{
                 XCTFail()
                 myExpectation.fulfill()
